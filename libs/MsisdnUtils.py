@@ -7,10 +7,10 @@ class MsisdnUtils(object):
     """
     A few utils for working with msisdn format
     """
-    def generate_random_msisdn():
+    def generate_random_msisdn(self):
         return str(random.randint(71111111111, 79999999999))
     
-    def generate_random_fullname():
+    def generate_random_fullname(self):
         female_names = ['Анна', 'Ангелина', 'Анастасия', 'Александра', 'Алиса', 'Василиса', 'Ольга', 'Евгения', 'Мария', 'Екатерина']
         male_names = ['Аркадий', 'Анатолий', 'Павел', 'Александр', 'Михаил', 'Игорь', 'Олег', 'Евгений', 'Марк', 'Валерий']
         fathers_names = ['Владимиров', 'Аркадьев', 'Александров', 'Олегов', 'Алексеев', 'Михайлов', 'Андреев', 'Яковлев']
