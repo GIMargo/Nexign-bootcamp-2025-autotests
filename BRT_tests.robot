@@ -69,6 +69,7 @@ Romashka with empty fields CDR validation
         Should Appear In Logs   Empty field error
     END
     ${calls_size_after}=    Query    select select count(*) from calls;
+    Should Be Equal As Integers    ${calls_size_before}    ${calls_size_after}
 
 Romashka with invalid call type CDR validation
     [Documentation]    Проверка обработки CDR со звонками несуществующего типа вызова
@@ -79,6 +80,7 @@ Romashka with invalid call type CDR validation
         Should Appear In Logs   Invalid call type error
     END
     ${calls_size_after}=    Query    select select count(*) from calls;
+    Should Be Equal As Integers    ${calls_size_before}    ${calls_size_after}
 
 Romashka with negative duration calls CDR validation
     [Documentation]    Проверка обработки CDR со звонками отрицательной продолжительности
@@ -89,6 +91,7 @@ Romashka with negative duration calls CDR validation
         Should Appear In Logs   Negative call duration error
     END
     ${calls_size_after}=    Query    select select count(*) from calls;
+    Should Be Equal As Integers    ${calls_size_before}    ${calls_size_after}
 
 
 Romashka with identical msisdn CDR validation
@@ -101,6 +104,7 @@ Romashka with identical msisdn CDR validation
         Should Appear In Logs    Identical msisdn error ${call.served_msisdn}
     END
     ${calls_size_after}=    Query    select select count(*) from calls;
+    Should Be Equal As Integers    ${calls_size_before}    ${calls_size_after}
 
 Romashka future calls CDR validation
     [Documentation]    Проверка обработки CDR со звонками из будущего
@@ -111,6 +115,7 @@ Romashka future calls CDR validation
         Should Appear In Logs   Incorrect date and time record
     END
     ${calls_size_after}=    Query    select select count(*) from calls;
+    Should Be Equal As Integers    ${calls_size_before}    ${calls_size_after}
 
 Empty file validation
     [Documentation]    Проверка обработки пустого файла
@@ -118,6 +123,7 @@ Empty file validation
     Send CDR ${TUCBRT08_PATH} to BRT
     Should Appear In Logs    Empty CDR-file error
     ${calls_size_after}=    Query    select select count(*) from calls;
+    Should Be Equal As Integers    ${calls_size_before}    ${calls_size_after}
 
 One Romashka call record validation
     [Documentation]    Проверка обработки файла с одной записью о звонке
